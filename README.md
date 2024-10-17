@@ -134,8 +134,8 @@ Crie uma pasta chamada `code` na raiz do projeto `aula-html-css-js`. Crie um arq
                 Caso queira saber mais sobre o jogo da velha visite o site
                 <a href="https://pt.wikipedia.org/wiki/Jogo_da_velha" target="_blank">Wikipedia</a>
             </p>
-            <p><b>Desenvolvido por:</b> Turma GAC116</p>
-            <p><b>Copyright:</b> 2024</p>
+            <p><b>Desenvolvido por:</b> Michel A. de Souza</p>
+            <p><b>Copyright:</b> GAC116 - 2024/2</p>
         </div>
     </body>
 </html>
@@ -215,8 +215,8 @@ Nessa etapa, iremos melhorar o aspecto visual da nossa página web através da i
                 Caso queira saber mais sobre o jogo da velha visite o site
                 <a href="https://pt.wikipedia.org/wiki/Jogo_da_velha" target="_blank">Wikipedia</a>
             </p>
-            <p><b>Desenvolvido por:</b> Turma GAC116</p>
-            <p><b>Copyright:</b> 2024</p>
+            <p><b>Desenvolvido por:</b> Michel A. de Souza</p>
+            <p><b>Copyright:</b> GAC116 - 2024/2</p>
         </div>
     </body>
 </html>
@@ -316,8 +316,8 @@ Atualize o conteúdo do arquivo `index.html` para o conteúdo exibido abaixo.
                 <a href="https://pt.wikipedia.org/wiki/Jogo_da_velha" target="_blank">Wikipedia</a>
             </p>
             <footer>
-                <p><b>Desenvolvido por:</b> Turma GAC116</p>
-                <p><b>Copyright:</b> 2024</p>
+                <p><b>Desenvolvido por:</b> Michel A. de Souza</p>
+                <p><b>Copyright:</b> GAC116 - 2024/2</p>
             </footer>
         </div>
     </body>
@@ -430,8 +430,8 @@ Atualize o conteúdo do arquivo `index.html` para o conteúdo exibido abaixo.
                 <a href="https://pt.wikipedia.org/wiki/Jogo_da_velha" target="_blank">Wikipedia</a>
             </p>
             <footer>
-                <p><b>Desenvolvido por:</b> Turma GAC116</p>
-                <p><b>Copyright:</b> 2024</p>
+                <p><b>Desenvolvido por:</b> Michel A. de Souza</p>
+                <p><b>Copyright:</b> GAC116 - 2024/2</p>
             </footer>
         </div>
         <script src="script.js"></script>
@@ -688,8 +688,8 @@ Atualize o conteúdo do arquivo `index.html` para o conteúdo exibido abaixo.
                 <a href="https://pt.wikipedia.org/wiki/Jogo_da_velha" target="_blank">Wikipedia</a>
             </p>
             <footer>
-                <p><b>Desenvolvido por:</b> Turma GAC116</p>
-                <p><b>Copyright:</b> 2024</p>
+                <p><b>Desenvolvido por:</b> Michel A. de Souza</p>
+                <p><b>Copyright:</b> GAC116 - 2024/2</p>
             </footer>
         </div>
         <script src="script.js"></script>
@@ -908,8 +908,8 @@ let qtdVitoriaX = 0;
 let qtdVitoriaO = 0;
 let qtdEmpate = 0;
 
-$('#imgX').css({opacity: 1.0, width: "150px"});
-$('#imgO').css({opacity: 0.2, width: "150px"});
+$('#imgX').css({opacity: 1.0});
+$('#imgO').css({opacity: 0.2});
 
 const padroesVitoria = [
     [0, 1, 2], //primeira linha
@@ -943,19 +943,19 @@ function mostrarStatus() {
         if (vencedor == 'empate') {
             qtdEmpate++;
             $('#status').text("Empate!");
-            $('#imgX').css({opacity: 1.0, width: "150px"});
-            $('#imgO').css({opacity: 1.0, width: "150px"});            
+            $('#imgX').css({opacity: 1.0});
+            $('#imgO').css({opacity: 1.0});
             $('#qtdEmpate').text("Quantidade de Empate: " + qtdEmpate);
         } else {
             $('#status').text(`O Jogador ${vencedor} ganhou!`);
             if (vencedor == 'X'){
                 qtdVitoriaX++;
-                $('#imgX').css({opacity: 1.0, width: "300px", transition: "width 1s ease"});
+                $('#imgX').css({opacity: 1.0});
                 $('#imgO').css({opacity: 0.2});
                 $('#qtdVitoriaX').text("Quantidade de Vitória X: " + qtdVitoriaX);
-            }else {
+            } else {
                 qtdVitoriaO++;
-                $('#imgO').css({opacity: 1.0, width: "300px", transition: "width 1s ease"});
+                $('#imgO').css({opacity: 1.0});
                 $('#imgX').css({opacity: 0.2});
                 $('#qtdVitoriaO').text("Quantidade de Vitória O: " + qtdVitoriaO);
             }
@@ -968,7 +968,7 @@ function mostrarStatus() {
 function fazerMovimento(index) {
     if (jogoAtivo && tabuleiro[index] == '') {
         tabuleiro[index] = jogadorAtual;
-        $('.celula').eq(index).text(jogadorAtual);       
+        $('.celula').eq(index).text(jogadorAtual);
         if (jogadorAtual == 'X'){
             $('.celula').eq(index).css('color', '#FD0');
             $('#imgO').css({opacity: 1.0});
@@ -988,8 +988,8 @@ function reiniciarJogo() {
     jogadorAtual = 'X';
     tabuleiro = ['', '', '', '', '', '', '', '', ''];
 
-    $('#imgX').css({opacity: 1.0, width: "150px"});
-    $('#imgO').css({opacity: 0.2, width: "150px"});
+    $('#imgX').css({opacity: 1.0});
+    $('#imgO').css({opacity: 0.2});
     $('.celula').text('');
 
     mostrarStatus();
